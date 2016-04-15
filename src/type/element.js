@@ -34,7 +34,7 @@ export default {
 
     const attributes = elem.attributes;
     const isAttributeNode = attributes && attributes.is;
-    const isAttributeValue = isAttributeNode && isAttributeNode .value;
+    const isAttributeValue = isAttributeNode && isAttributeNode.value;
     if (isAttributeValue in defs) {
       return defs[isAttributeValue];
     }
