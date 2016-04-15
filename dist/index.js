@@ -151,7 +151,7 @@
 	    var isInDom = utilElementContains(document, arg);
 	    walkTree(arg, function (descendant) {
 	      var component = registry.find(descendant);
-	      if (component && !component.isNative) {
+	      if (component) {
 	        if (component.prototype.createdCallback) {
 	          component.prototype.createdCallback.call(descendant);
 	        }
@@ -728,6 +728,7 @@
 	      });
 
 	      if (cancelledEvents.length > 0) {
+	        info.updatingProperty = false;
 	        return;
 	      }
 	    }
